@@ -1,0 +1,1 @@
+# tästä käynnistetään ohjelma
