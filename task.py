@@ -1,1 +1,9 @@
-# task feature here?
+"""
+view tasks
+New task
+edit task
+edit tasks state
+delete task
+"""
+
+#class Task:
