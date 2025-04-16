@@ -1,10 +1,5 @@
 """
-view tasks 
-New task
-edit task
-edit tasks state
-delete task
-list of task
+view tasks, New task, edit task, edit tasks state, delete task, list of task
 """
 
 class Task:
