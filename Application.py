@@ -18,7 +18,7 @@ class Application:
             print("0. Exit")
             choice = input("Please select an option (1-7): ")
             if choice == '1':
-                task.view_tasks()
+                task.search_tasks()
             elif choice == '2':
                 task.new_task()
             elif choice == '3':
