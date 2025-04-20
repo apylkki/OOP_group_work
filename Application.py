@@ -9,7 +9,7 @@ class Application:
         while True:
             print("\nApplication Menu:")
             print("0. Exit")
-            print("1. View tasks")
+            print("1. Search tasks")
             print("2. New task")
             print("3. Edit task")
             print("4. Edit task state")
@@ -34,8 +34,23 @@ class Application:
             else:
                 print("Invalid choice. Please try again.")
 
+#Test
+def test(task_manager):
+    task1 = Task("Task 1", "Description 1", "2023-10-01", "new", 1)
+    task2 = Task("Task 2", "Description 2", "2023-10-02", "work in progress", 2)
+    task3 = Task("Task 3", "Description 3", "2023-10-03", "finished", 3)
+
+    task_manager.tasks.append(task1)
+    task_manager.tasks.append(task2)
+    task_manager.tasks.append(task3)
+
 if __name__ == "__main__":
     task_manager = TaskManager()
     app = Application()
+
+    #test chearch_tasks-mehtod
+    test(task_manager)
+
+    #start the application
     app.main_menu(task_manager)
     
