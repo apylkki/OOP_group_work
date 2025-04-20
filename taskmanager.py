@@ -7,13 +7,14 @@ from task import Task
 class TaskManager:
     def __init__(self):
         self.tasks = []  # List to store tasks
+        self.next_task_id = 1  # Automated task ID generation
 
     def search_tasks(self): #heidi
         # Implement search functionality here
         task_id = int(input("Enter task ID to shearch: "))
         for task in self.tasks:
-            if task.get_task_id() == task_id:
-                print(f"Task found: {task.get_title()}, {task.get_description()}, {task.get_deadline()}, {task.get_state()}")
+            if task.task_id == task_id:
+                print(f"Task found: {task.title}, {task.description}, {task.deadline}, {task.state}")
                 return task
         print("Task not found.")
 
