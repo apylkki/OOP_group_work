@@ -1,29 +1,46 @@
 """
 view tasks, New task, edit task, edit tasks state, delete task, list of task
+titile, description, deadline, state, id
 """
 
 class Task:
-
-    # automatisoi id luonti
-    def __init__(self):
+    def __init__(self, title: str, description: str, deadline: str, state: str, task_id: int):
+        self.__title = title
+        self.__description = description
+        self.__deadline = deadline
+        self.__state = state
+        self.__task_id = task_id
         self.tasks = []
-        self.task_id = 0
 
-    def search_tasks(self): #heidi, etsi id mukaan
-        print("View tasks")
+    # getter methods
+    def get_title(self):
+        return self.__title
+    
+    def get_description(self):
+        return self.__description
+    
+    def get_deadline(self):
+        return self.__deadline
+    
+    def get_state(self):
+        return self.__state
+    
+    def get_task_id(self):
+        return self.__task_id
+    
+    # setter methods
+    def set_title(self, title):
+        self.__title = title
 
-    def new_task(self): #säde
-        print("New task")
+    def set_description(self, description):
+        self.__description = description
 
-    def edit_task(self): #heidi
-        print("Edit task")
+    def set_deadline(self, deadline):
+        self.__deadline = deadline
 
-    def edit_tasks_state(self): #heidi
-        print("Edit tasks state")
+    def set_state(self, state):
+        self.__state = state
 
-    def delete_task(self): #säde
-        print("Delete task")
-
-    def list_of_tasks(self): #säde
-        print("List of tasks")
+    def set_task_id(self, task_id):
+        self.__task_id = task_id
 
