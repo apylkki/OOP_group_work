@@ -12,35 +12,42 @@ class Task:
         self.__task_id = task_id
         self.tasks = []
 
-    # getter methods
-    def get_title(self):
+    @property
+    def title(self) -> str:
         return self.__title
     
-    def get_description(self):
-        return self.__description
+    @title.setter
+    def title(self, title: str):
+        self.__title = title
     
-    def get_deadline(self):
+    @property
+    def description(self) -> str:
+        return self.__description
+
+    @description.setter
+    def description(self, description: str):
+        self.__description = description
+    
+    @property
+    def deadline(self) -> str:
         return self.__deadline
     
-    def get_state(self):
-        return self.__state
-    
-    def get_task_id(self):
-        return self.__task_id
-    
-    # setter methods
-    def set_title(self, title):
-        self.__title = title
-
-    def set_description(self, description):
-        self.__description = description
-
-    def set_deadline(self, deadline):
+    @deadline.setter
+    def deadline(self, deadline: str):
         self.__deadline = deadline
 
-    def set_state(self, state):
+    @property
+    def state(self) -> str:
+        return self.__state
+    
+    @state.setter
+    def state(self, state: str):
         self.__state = state
 
-    def set_task_id(self, task_id):
+    @property
+    def task_id(self) -> int:
+        return self.__task_id
+    
+    @task_id.setter
+    def task_id(self, task_id: int):
         self.__task_id = task_id
-

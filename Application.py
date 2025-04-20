@@ -4,7 +4,6 @@ This is the main file of the application, where the main menu is created and the
 from task import Task
 from taskmanager import TaskManager
 class Application:
-
     def main_menu(self, task_manager: TaskManager):
         while True:
             print("\nApplication Menu:")
