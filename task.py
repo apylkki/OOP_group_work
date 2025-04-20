@@ -1,6 +1,6 @@
 """
-view tasks, New task, edit task, edit tasks state, delete task, list of task
-titile, description, deadline, state, id
+This module defines a Task class that represents a task with attributes such as title, description, deadline, state, and task ID.
+It provides getter and setter methods for each attribute, allowing for encapsulation and data management.
 """
 
 class Task:
