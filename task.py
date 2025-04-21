@@ -12,6 +12,7 @@ class Task:
         self.__task_id = task_id
         self.tasks = []
 
+    # getter and setter methods for each attribute
     @property
     def title(self) -> str:
         return self.__title

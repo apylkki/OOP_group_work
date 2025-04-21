@@ -6,26 +6,34 @@ from task import Task
 
 class TaskManager:
     def __init__(self):
-        self.tasks = []  # List to store tasks
-        self.next_task_id = 1  # Automated task ID generation
+        self.tasks = {}  # Dictionary to store tasks
 
     def search_tasks(self): #heidi
-        # Implement search functionality here
-        task_id = int(input("Enter task ID to shearch: "))
-        for task in self.tasks:
-            if task.task_id == task_id:
-                print(f"Task found: {task.title}, {task.description}, {task.deadline}, {task.state}")
-                return task
-        print("Task not found.")
+        """Search for a task by its ID."""
+        if not self.tasks:
+            print("Task not found. No tasks have been created yet.\n")
+            return
+        while True:
+            try:
+                task_id = int(input("Enter task ID to shearch: "))
+                if task_id == self.tasks:
+                    task = self.tasks[task_id]
+                    print(f"Task: {task.title}, {task.description}, {task.deadline}, {task.state}")
+                    return task
+                else:
+                    print("Task not found. Please try again.\n")
+            except ValueError:
+                print("Invalid input. Please enter a valid task ID.\n")
 
-    def new_task(self): #säde
-        # automatisoi task_id luonti
+    def new_task(self): #säde, state on aina new
+        # Automated task ID generation
         print("New task")
 
     def edit_task(self): #heidi, haku id mukaan
         print("Edit task")
 
     def edit_tasks_state(self): #heidi, id mukaan, new, work in progress, finished, also possibly pending, delayed, backburner 
+        #käytä librarya tämän tehtävän tekemiseen
         print("Edit tasks state")
 
     def delete_task(self): #säde

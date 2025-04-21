@@ -3,6 +3,7 @@ This is the main file of the application, where the main menu is created and the
 """
 from task import Task
 from taskmanager import TaskManager
+
 class Application:
     def main_menu(self, task_manager: TaskManager):
         while True:
@@ -34,21 +35,23 @@ class Application:
                 print("Invalid choice. Please try again.")
 
 #Test
+"""
 def test(task_manager):
-    task1 = Task("Task 1", "Description 1", "2023-10-01", "new", 1)
-    task2 = Task("Task 2", "Description 2", "2023-10-02", "work in progress", 2)
-    task3 = Task("Task 3", "Description 3", "2023-10-03", "finished", 3)
+    task1 = Task("Task 1", "Homework", "30-04-2025", "new", 1)
+    task2 = Task("Task 2", "Group work", "26-4-2025", "work in progress", 2)
+    task3 = Task("Task 3", "Group meeting", "05-4-2025", "finished", 3)
 
     task_manager.tasks.append(task1)
     task_manager.tasks.append(task2)
     task_manager.tasks.append(task3)
+"""
 
 if __name__ == "__main__":
     task_manager = TaskManager()
     app = Application()
 
     #test chearch_tasks-mehtod
-    test(task_manager)
+    #test(task_manager)
 
     #start the application
     app.main_menu(task_manager)
