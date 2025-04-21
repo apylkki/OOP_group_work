@@ -116,5 +116,16 @@ class TaskManager:
             return
                 
 
-    def list_of_tasks(self): #säde
-        print("List of tasks")
+    def list_of_tasks(self):
+        """Displays all the tasks."""
+        
+        if not self.tasks:
+            print("No tasks available. Task list is empty.")
+            return
+        
+        print("All tasks: ")
+        for task_id, task in self.tasks.items():
+            print(f"ID: {task_id}, Title: {task.title}, Description: {task.description}, Deadline: {task.deadline}, State: {task.state}")
+        return
+    
+        
