@@ -33,9 +33,8 @@ class Application:
                 task_manager.list_of_tasks()
             else:
                 print("Invalid choice. Please try again.")
-
-#Test
 """
+#Test
 def test(task_manager):
     task1 = Task("Task 1", "Homework", "30-04-2025", "new", 1)
     task2 = Task("Task 2", "Group work", "26-4-2025", "work in progress", 2)
