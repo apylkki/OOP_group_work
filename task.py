@@ -4,12 +4,12 @@ It provides getter and setter methods for each attribute, allowing for encapsula
 """
 
 class Task:
-    def __init__(self, title: str, description: str, deadline: str, state: str, task_id: int):
+    def __init__(self, task_id: int, title: str, description: str, deadline: str, state: str):
+        self.__task_id = task_id
         self.__title = title
         self.__description = description
         self.__deadline = deadline
         self.__state = state
-        self.__task_id = task_id
         self.tasks = []
 
     # getter and setter methods for each attribute

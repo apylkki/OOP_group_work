@@ -35,10 +35,10 @@ class TaskManager:
         description = input("Enter the description for task: ")
         deadline = input("Enter the deadline for task: ")
         
-        task = Task(title, description, deadline, "new")
+        task = Task(task_id, title, description, deadline, "new")
         self.tasks[task_id] = task
         
-        print(f"Task {task_id} created: {task.title}, {task.description}, {task.deadline}, {task.state}")
+        print(f"Task {task_id} created: Title: {task.title}, Description:{task.description}, Deadline: {task.deadline}, State: {task.state}")
         return task
 
     def edit_task(self): #heidi
