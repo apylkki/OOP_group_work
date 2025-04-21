@@ -95,8 +95,26 @@ class TaskManager:
             print("Invalid input. Please enter a valid task ID.")
             return None
 
-    def delete_task(self): #säde
-        print("Delete task")
+    def delete_task(self):
+        """Delete an existing task."""
+        if not self.tasks:
+            print("No tasks available to delete.")
+            return
+        
+        try:
+            task_id = int(input("Enter task ID to delete (or 0 to cancel): "))
+            if task_id == 0:
+                print("Delete operation canceled.")
+                return
+            
+            if task_id in self.tasks:
+                task = self.tasks[task_id]
+                del self.tasks[task_id]
+                print(f"Task deleted: {task.title}, {task.description}, {task.deadline}, {task.state}")
+        except ValueError:
+            print("Invalid input. Please enter a valid task ID.")
+            return
+                
 
     def list_of_tasks(self): #säde
         print("List of tasks")
