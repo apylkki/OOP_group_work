@@ -28,9 +28,18 @@ class TaskManager:
             except ValueError:
                 print("Invalid input. Please enter a valid task ID.\n")
 
-    def new_task(self): #säde, state on aina new
+    def new_task(self): 
+        """Create a new task"""
         task_id = len(self.tasks) + 1 # Automated task ID generation
-        print("New task")
+        title = input("Enter title for new task: ")
+        description = input("Enter the description for task: ")
+        deadline = input("Enter the deadline for task: ")
+        
+        task = Task(title, description, deadline, "new")
+        self.tasks[task_id] = task
+        
+        print(f"Task {task_id} created: {task.title}, {task.description}, {task.deadline}, {task.state}")
+        return task
 
     def edit_task(self): #heidi
         """Edit an existing task."""
