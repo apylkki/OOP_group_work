@@ -15,11 +15,14 @@ class TaskManager:
             return
         while True:
             try:
-                task_id = int(input("Enter task ID to shearch: "))
-                if task_id == self.tasks:
+                task_id = int(input("Enter task ID to shearch (0 to exit): "))
+                if task_id in self.tasks:
                     task = self.tasks[task_id]
                     print(f"Task: {task.title}, {task.description}, {task.deadline}, {task.state}")
                     return task
+                elif task_id == 0:
+                    print("Exiting search.")
+                    break
                 else:
                     print("Task not found. Please try again.\n")
             except ValueError:
@@ -29,8 +32,38 @@ class TaskManager:
         # Automated task ID generation
         print("New task")
 
-    def edit_task(self): #heidi, haku id mukaan
-        print("Edit task")
+    def edit_task(self): #heidi
+        """Edit an existing task."""
+        if not self.tasks:
+            print("No tasks available to edit.")
+            return
+        try:
+            task_id = int(input("Enter task ID to edit: "))
+            if task_id in self.tasks:
+                task = self.tasks[task_id]
+                print(f"Editing task: {task.title}, {task.description}, {task.deadline}, {task.state}")
+
+                new_title = input(f"Enter new title: ")
+                new_description = input(f"Enter new description: ")
+                new_deadline = input(f"Enter new deadline: ")
+                new_state = input(f"Enter new state: ")
+
+                if new_title:
+                    task.title = new_title
+                if new_description:
+                    task.description = new_description
+                if new_deadline:
+                    task.deadline = new_deadline
+                if new_state:
+                    task.state = new_state
+                print(f"Task {task_id} updated: {task.title}, {task.description}, {task.deadline}, {task.state}")
+                return task
+            else:
+                print("Task not found.")
+                return None
+        except ValueError:
+            print("Invalid input. Please enter a valid task ID.")
+            return None
 
     def edit_tasks_state(self): #heidi, id mukaan, new, work in progress, finished, also possibly pending, delayed, backburner 
         #käytä librarya tämän tehtävän tekemiseen
