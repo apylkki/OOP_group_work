@@ -29,7 +29,7 @@ class TaskManager:
                 print("Invalid input. Please enter a valid task ID.\n")
 
     def new_task(self): #säde, state on aina new
-        # Automated task ID generation
+        task_id = len(self.tasks) + 1 # Automated task ID generation
         print("New task")
 
     def edit_task(self): #heidi
@@ -65,9 +65,26 @@ class TaskManager:
             print("Invalid input. Please enter a valid task ID.")
             return None
 
-    def edit_tasks_state(self): #heidi, id mukaan, new, work in progress, finished, also possibly pending, delayed, backburner 
-        #käytä librarya tämän tehtävän tekemiseen
-        print("Edit tasks state")
+    def edit_tasks_state(self): #heidi
+        """Edit the state of an existing task."""
+        if not self.tasks:
+            print("No tasks available to edit.")
+            return
+        try:
+            task_id = int(input("Enter task ID to edit state: "))
+            if task_id in self.tasks:
+                task = self.tasks[task_id]
+                print(f"Editing task state: {task.title}, {task.description}, {task.deadline}, {task.state}")
+
+                new_state = input(f"Enter new state (new, work in progress, finished): ").strip().lower()
+                if new_state in ["new", "work in progress", "finished"]:
+                    task.state = new_state
+                    print(f"Task {task_id} updated state to: {task.state}")
+                else:
+                    print("Invalid state. Please enter a valid state.")
+        except ValueError:
+            print("Invalid input. Please enter a valid task ID.")
+            return None
 
     def delete_task(self): #säde
         print("Delete task")
