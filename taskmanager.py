@@ -111,6 +111,7 @@ class TaskManager:
                     task = self.tasks[task_id]
                     del self.tasks[task_id]
                     print(f"Task deleted: {task.title}, {task.description}, {task.deadline}, {task.state}")
+                    return
                 elif task_id not in self.tasks:
                     print("Task not found. Please enter a valid task ID.")
             except ValueError:
