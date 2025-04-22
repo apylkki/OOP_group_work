@@ -8,7 +8,7 @@ class TaskManager:
     def __init__(self):
         self.tasks = {}  # Dictionary to store tasks
 
-    def search_tasks(self): #heidi
+    def search_tasks(self):
         """Search for a task by its ID."""
         if not self.tasks:
             print("Task not found. No tasks have been created yet.\n")
@@ -41,7 +41,7 @@ class TaskManager:
         print(f"Task {task_id} created: Title: {task.title}, Description:{task.description}, Deadline: {task.deadline}, State: {task.state}")
         return task
 
-    def edit_task(self): #heidi
+    def edit_task(self): 
         """Edit an existing task."""
         if not self.tasks:
             print("No tasks available to edit.")
@@ -74,7 +74,7 @@ class TaskManager:
             print("Invalid input. Please enter a valid task ID.")
             return None
 
-    def edit_tasks_state(self): #heidi
+    def edit_tasks_state(self): 
         """Edit the state of an existing task."""
         if not self.tasks:
             print("No tasks available to edit.")
