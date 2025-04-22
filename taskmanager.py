@@ -38,7 +38,7 @@ class TaskManager:
         task = Task(task_id, title, description, deadline, "new")
         self.tasks[task_id] = task
         
-        print(f"Task {task_id} created: Title: {task.title}, Description:{task.description}, Deadline: {task.deadline}, State: {task.state}")
+        print(f"Task {task_id} created: Title: {task.title}, Description: {task.description}, Deadline: {task.deadline}, State: {task.state}")
         return task
 
     def edit_task(self): #heidi
